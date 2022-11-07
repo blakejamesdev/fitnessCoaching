@@ -1,0 +1,34 @@
+{
+  "name": "fitnesscoaching",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon backend/server.js",
+    "client": "npm run start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ImNGodmode/fitnessCoaching.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ImNGodmode/fitnessCoaching/issues"
+  },
+  "homepage": "https://github.com/ImNGodmode/fitnessCoaching#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "concurrently": "^7.5.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.7.1",
+    "morgan": "^1.10.0",
+    "react": "^18.2.0",
+    "serve-favicon": "^2.5.0"
+  }
+}
