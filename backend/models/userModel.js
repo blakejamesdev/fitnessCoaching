@@ -25,6 +25,23 @@ const userSchema = new mongoose.Schema(
       required: [true, "Password is a required field"],
       select: false,
     },
+    age:{
+      type: String,
+      default: 3
+    },
+    natural: {
+      type: Boolean,
+      default: false      
+    },
+    male: {
+      type: Boolean,
+      default: false
+    },
+    coach: {
+      type: Boolean,
+      default: false
+    }
+
   },
   {
     timestamps: true,

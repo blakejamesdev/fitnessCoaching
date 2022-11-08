@@ -6,17 +6,22 @@ const User = require("./../../models/userModel");
 
 // Define a route handler for creating users
 exports.createUser = async (request, response) => {
+  console.log(request)
   try {
     // Create new user
     const newUser = await User.create({
       name: request.body.name,
       email: request.body.email,
       password: request.body.password,
+      age: request.body.age,
+      natural: request.body.natural,
+      male: request.body.male,
+      coach: request.body.coach
     });
 
     // Remove password from output
     newUser.password = undefined;
-
+    console.log(newUser)
     // Create token
     const token = await jwt.sign(
       { id: newUser._id },
@@ -35,6 +40,7 @@ exports.createUser = async (request, response) => {
       },
     });
   } catch (error) {
+    console.log(error)
     response.status(500).json({
       status: "error",
       error: error,
@@ -82,6 +88,7 @@ exports.login = async (request, response) => {
       },
     });
   } catch (error) {
+    console.log(error)
     response.status(400).json({
       status: "fail",
       message: error.message,
@@ -107,6 +114,7 @@ exports.getUser = async (request, response) => {
       },
     });
   } catch (error) {
+    console.log(error)
     response.status(404).json({
       status: "fail",
       message: error.message,
