@@ -9,12 +9,12 @@ const userSchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      required: [true, "Each user must have a name"],
+      // required: [true, "Each user must have a name"],
     },
     email: {
       type: String,
       trim: true,
-      required: [true, "Email is a required field"],
+      // required: [true, "Email is a required field"],
       unique: true,
       lowercase: true,
     },
@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema(
       type: String,
       trim: true,
       minLength: [3, "Password must be at least 3 characters long"],
-      required: [true, "Password is a required field"],
+      // required: [true, "Password is a required field"],
       select: false,
     },
     age:{

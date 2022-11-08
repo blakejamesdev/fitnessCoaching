@@ -1,17 +1,31 @@
 const BASE_URL = "/api/users";
+import axios from "axios"
 
 export async function signUp(userData) {
-    const res = await fetch(BASE_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(userData),
-    });
+  // console.log(userData)
+  //   const res = await fetch(BASE_URL, {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify(userData)
+  //   });
 
-    if (res.ok) {
-        return res.json();
-    } else {
-    throw new Error("Invalid Sign Up");
-    }
+  //   console.log(res)
+  //   if (res.ok) {
+  //       return res.json();
+  //   } else {
+  //   throw new Error("Invalid Sign Up");
+  //   }
+try {
+  const res = await axios({
+    method: "POST",
+    url: BASE_URL,
+    data: userData
+  })
+  console.log(res)
+}catch(e){
+  console.log(e)
+}
+
 }
 
 export async function login(userData) {
