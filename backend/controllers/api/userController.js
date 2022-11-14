@@ -99,7 +99,7 @@ exports.login = async (request, response) => {
 // Define a route handler for retrieving the a single user
 exports.getUser = async (request, response) => {
   try {
-    const user = await User.findById(request.params.id);
+    const user = await User.findById(request.params.id).populate({path: 'macros', select: 'calories protein carbs fats'}).populate({path:"workouts", select:'bench inclineBench pecdec revpecdec pushdowns latraise declinesitups'});
 
     // Assuming no user if found with that id
     if (!user) {
@@ -121,3 +121,35 @@ exports.getUser = async (request, response) => {
     });
   }
 };
+
+// Define a route handler for retrieving all users
+exports.userList = async (request, response) => {
+  try {
+    const data = await User.find().populate({path: 'macros', select: 'calories protein carbs fats'}).populate({path:"workouts", select:'bench inclineBench pecdec revpecdec pushdowns latraise declinesitups'});
+    if (!data) {
+      throw new Error("No users found")
+    }
+    response.status(200).json({
+      status:"success",
+      data:{
+        data,
+      },
+    });
+  }catch (error){
+    console.log(error)
+    response.status(404).json({
+      status: "fail",
+      message: error.message,
+    });
+  };
+};
+// Define a route handler for deleting a user
+exports.deleteUser = async (request, response) => {
+  try{
+    User.findByIdAndRemove(request.params.id, (err, data) => {
+
+    })
+  }catch (error){
+    console.log(error)
+  }
+}

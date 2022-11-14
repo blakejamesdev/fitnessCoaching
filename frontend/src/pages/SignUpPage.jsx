@@ -2,11 +2,11 @@ import React from 'react'
 import SignUpForm from '../components/SignUpForm'
 
 
-function SignUpPage() {
+function SignUpPage({setUser}) {
   return (
     <>
         
-        <SignUpForm />
+        <SignUpForm setUser={setUser}/>
     </>
     
 

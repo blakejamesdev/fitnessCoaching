@@ -52,19 +52,19 @@ const SignUpForm = ({ setUser }) => {
 
     // Retrieve state
     const state = { name, email, password, confirm, error, age, natural, male, coach};
-    console.log(state)
+    //console.log(state)
     try {
       // Make a copy of our data
       const formData = { ...state };
 
       delete formData["confirm"];
       delete formData["error"];
-      console.log(formData)
+      //console.log(formData)
       // Send the data to our backend
       const user = await signUp(formData);
 
       // Log the data to the console
-      console.log(user);
+     // console.log(user);
       setUser(user.data);
     } catch (error) {
       setError("Sign Up Failed - Try Again");
@@ -73,9 +73,10 @@ const SignUpForm = ({ setUser }) => {
   };
   // Reder component
   return (
-    <div>
+    <div className="form-container">
+    <div className="signup">
       <h1>Sign Up Form</h1>
-      <div className="form-container">
+      
         <form
           autoComplete="off"
           onSubmit={(e) => {
@@ -91,7 +92,7 @@ const SignUpForm = ({ setUser }) => {
             }}
             value={name}
             required
-          />
+          /><br/>
           <label>Email</label>
           <input
             type="email"
@@ -101,7 +102,7 @@ const SignUpForm = ({ setUser }) => {
             }}
             value={email}
             required
-          />
+          /><br/>
           <label>Password</label>
           <input
             type="password"
@@ -111,7 +112,7 @@ const SignUpForm = ({ setUser }) => {
             }}
             value={password}
             required
-          />
+          /><br/>
           <label>Confirm</label>
           <input
             type="password"
@@ -121,7 +122,7 @@ const SignUpForm = ({ setUser }) => {
             }}
             value={confirm}
             required
-          />
+          /><br/>
           <label>Age</label>
           <input 
           type="text" 
@@ -129,7 +130,7 @@ const SignUpForm = ({ setUser }) => {
           value={age}
           onChange={(e) => {
             return handleAgeChange(e);
-          }}/>
+          }}/><br/>
           <label>Are you Natural?</label>
           <input 
           type="checkbox"
@@ -137,7 +138,7 @@ const SignUpForm = ({ setUser }) => {
           value={natural}
           onChange={() => {
             return handleNaturalChange();
-          }}/>
+          }}/><br/>
           <label>Were You Born Male</label>
           <input 
           type="checkbox"
@@ -145,7 +146,7 @@ const SignUpForm = ({ setUser }) => {
           value={male}
           onChange={() => {
             return handleMaleChange();
-          }}/>
+          }}/><br/>
           <label>Are you a Coach?</label>
           <input 
           type="checkbox"
@@ -153,7 +154,7 @@ const SignUpForm = ({ setUser }) => {
           value={coach}
           onChange={() => {
             return handleCoachChange();
-          }}/>
+          }}/><br/>
 
           <button type="submit" disabled={disable}>
             SIGN UP

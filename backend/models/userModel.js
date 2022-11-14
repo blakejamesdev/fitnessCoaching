@@ -43,13 +43,23 @@ const userSchema = new mongoose.Schema(
     }
 
   },
+
   {
     timestamps: true,
     toObject: { virtuals: true },
     toJSON: { virtuals: true },
   }
 );
-
+userSchema.virtual('macros',{
+  ref: 'Macros',
+  localField: '_id',
+  foreignField: 'owner'
+})
+userSchema.virtual('workouts',{
+  ref: 'Workout',
+  localField: '_id',
+  foreignField: 'owner'
+})
 // Create a document middleware to encrypt the password
 userSchema.pre("save", async function (next) {
   if (!this.isModified("password")) {

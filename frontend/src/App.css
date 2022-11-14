@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  background-image: url(http://cdn.shopify.com/s/files/1/2320/0093/products/SFS-Barbells-001-e1476047888223-456x456_600x.jpg?v=1551156787);
+  background-size: cover;
+  color: aqua;
+  height: 100vh;
+  width: 100vw;
 }
 
 .App-logo {
@@ -35,4 +40,72 @@
   to {
     transform: rotate(360deg);
   }
+}
+span{
+  display: none;
+}
+body{
+  background-color: #202225;
+  height: 1000vh;
+  width: 100vw;
+}
+li{
+  border: solid black 2px;
+  margin: 2%;
+  background-color: #6d7688;
+  width: 20%;
+  padding: 20px;
+  border-radius: 25px;
+}
+.list{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.trainee{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.container{
+  border: solid black 2px;
+  background-color: #6d7688;
+  border-radius: 25px;
+  padding: 10px;
+}
+.form{
+ 
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  border: solid black 2px;
+  background-color: #6d7688;
+  border-radius: 25px;
+  padding: 10px;
+  
+}
+.formContainer{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.auth{
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  border: solid black 2px;
+  background-color: #6d7688;
+  border-radius: 25px;
+  padding: 10px;
+  margin-left: 33%;
+}
+.signup{
+  /* display: flex;
+  flex-direction: column; */
+  width: 33%;
+  border: solid black 2px;
+  background-color: #6d7688;
+  border-radius: 25px;
+  padding: 10px;
+  margin-left: 33%;
 }

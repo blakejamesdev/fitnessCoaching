@@ -53,7 +53,7 @@ const signIn = ({ setUser }) => {
               return handleInputChange(e);
             }}
             value={email}
-          />
+          /><br/>
           <label>Password</label>
           <input
             type="password"
@@ -63,7 +63,7 @@ const signIn = ({ setUser }) => {
               return handleInputChange(e);
             }}
             value={password}
-          />
+          /><br/>
           <button type="submit">LOG IN</button>
         </form>
       </div>

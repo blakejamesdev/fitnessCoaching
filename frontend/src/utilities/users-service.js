@@ -3,6 +3,7 @@ import * as usersAPI from "./users-api";
 export async function signUp(userData) {
   //console.log(userData)
     const response = await usersAPI.signUp(userData);
+    console.log(response)
     const data = response.data;
     localStorage.setItem("data", JSON.stringify(data));
     return response;
