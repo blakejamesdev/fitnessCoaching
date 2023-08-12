@@ -1,5 +1,5 @@
 import axios from "axios"
-const BASE_URL = "/api/users";
+const BASE_URL = "https://fitnesscoaching.onrender.com";
 
 
 export async function SignUp(userData) {
