@@ -1,11 +1,12 @@
 // IMPORT REACT
-import React, { useState } from "react";
+import React from "react";
+import { useState } from "react";
 
 // ADDITIONAL IMPORTS
 import { login } from "./../utilities/users-service";
 
 // CREATE COMPONENT
-const signIn = ({ setUser }) => {
+const SignIn = ({ setUser }) => {
   // Create different state variables
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -73,4 +74,4 @@ const signIn = ({ setUser }) => {
 };
 
 // EXPORT COMPONENT
-export default signIn;
+export default SignIn;
