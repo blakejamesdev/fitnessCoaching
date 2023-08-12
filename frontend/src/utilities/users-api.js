@@ -2,7 +2,7 @@ import axios from "axios"
 const BASE_URL = "/api/users";
 
 
-export async function signUp(userData) {
+export async function SignUp(userData) {
   //console.log(userData)
     // const res = await fetch(BASE_URL, {
     //     method: "POST",
