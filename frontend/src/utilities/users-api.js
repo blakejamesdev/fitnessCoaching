@@ -19,7 +19,7 @@ export async function SignUp(userData) {
 try {
   const res = await axios({
     method: "POST",
-    url: BASE_URL,
+    url: `${BASE_URL}/api/users/`,
     data: userData
   })
   console.log(res)
