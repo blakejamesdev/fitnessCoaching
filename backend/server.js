@@ -30,6 +30,11 @@ app.use("/api/users", userRouter);
 app.use("/api/macro", macrosRouter);
 app.use("/api/workout", workoutRouter);
 
+app.get("/", (request, response) => {
+  response.setHeader("access-Control-Allow-Credentials", "true");
+  response.send("API is running . . .")
+})
+
 app.all("*", (request, response) => {
   response.send("Undefined route");
 });
