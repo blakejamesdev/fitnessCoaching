@@ -35,9 +35,9 @@ app.get("/", (request, response) => {
   response.send("API is running . . .")
 })
 
-app.all("*", (request, response) => {
-  response.send("Undefined route");
-});
+// app.all("*", (request, response) => {
+//   response.send("Undefined route");
+// });
 
 const port = 3001;
 app.listen(port, () => {
