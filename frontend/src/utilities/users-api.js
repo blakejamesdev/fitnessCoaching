@@ -31,7 +31,7 @@ try {
 
 export async function login(userData) {
     // Use the data to make a network request
-    const response = await fetch(`${BASE_URL}/login`, {
+    const response = await fetch(`${BASE_URL}/api/users/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(userData),
